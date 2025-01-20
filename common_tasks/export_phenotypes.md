@@ -33,3 +33,10 @@ dx extract_dataset {projectID}:{recordID} --list-entities > all_entities.txt
 dx extract_dataset {projectID}:{recordID} --fields "participant.eid,participant.p100001_i0,participant.p100001_i1,participant.p100001_i2,participant.p100001_i3,participant.p100001_i4"
 ```
 
+- Instead of giving a list of fields as inputs to `--fields`, a more efficient way is to have the list of fields as a file and use `----fields-file`
+
+- NOTES: 
+    + From my experience, if there are a lot of fields to extract, the command will fail because it overwhelms the server (see: https://community.dnanexus.com/s/question/0D582000004TONTCA4/are-there-simpler-ways-of-doing-things). Therefore, perhaps using spark to extract the phenotypes are more efficient
+    + Resources for using spark to extract phenotypes:
+    https://github.com/UK-Biobank/UKB-RAP-Notebooks-Access
+    https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/using-spark-to-analyze-tabular-data 
