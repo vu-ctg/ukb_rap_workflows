@@ -1,5 +1,10 @@
 # Document analysis of Whole Exome Sequencing (WES)
 
+## General information about the VCF
+- Information specifically for VCF found in `/Bulk/Exome sequences/Population level exome OQFE variants, pVCF format - final release/` (23157)
+- https://biobank.ndph.ox.ac.uk/showcase/label.cgi?id=170
+- Genome build: GRCh38 (Reference: `The OQFE protocol aligns and duplicate-marks all raw sequencing data (FASTQs) to the full GRCh38 reference in an alt-aware manner as described in the original FE manuscript (https://pubmed.ncbi.nlm.nih.gov/30279509/).`)
+
 ## Description of WES data structure on UKB-RAP
 - pVCF path: `/Bulk/Exome sequences/Population level exome OQFE variants, pVCF format - final release/`
 - Example file name: `ukb23157_cX_b0_v1.vcf.gz` where
@@ -66,13 +71,17 @@ For example, I am interested in the gene ABCD1
 - Step 1: Find which block
     - Use `wes_analyses/find_blocks_for_subset_vcfs.py`. Example:
     ```
-    python find_blocks_for_subset_vcfs.py --chrom X --start 152168700 --end 153788225
+    python find_blocks_for_subset_vcfs.py --chrom X --start 153724856 --end 153744755
+    python find_blocks_for_subset_vcfs.py --chrom X --start 153724856 --end 153744755
     Start block: ukb23157_cX_b22_v1
     End block: ukb23157_cX_b22_v1
-    For region of interest X:152168700-153788225, subset the VCF from block ukb23157_cX_b22_v1.
+    For region of interest X:153724856-153744755, subset the VCF from block ukb23157_cX_b22_v1.
     ```
 - Step 2: run dx run vcftools via swiss-army-knife
-Example command to get the freq of all variants in ABCD1
-```
-dx run app-swiss-army-knife -iin={projectID}:{recordID} -icmd="vcftools --gzvcf ukb23157_cX_b22_v1.vcf.gz --from-bp 152168700 --to-bp 153788225 --freq --out ABCD1_freq.txt" --instance-type mem1_ssd1_v2_x2 --name ABCD1_freq
-```
+    - Example command to get the freq of all variants in ABCD1
+    - Restricting to participants who are 
+        - females and 
+        - Diagnoses - main ICD10 includes Chapter VI Diseases of the nervous system
+    ```
+    dx run app-swiss-army-knife -iin={projectID}:{recordID} -icmd="vcftools --gzvcf ukb23157_cX_b22_v1.vcf.gz --chr chrX --from-bp 153724856 --to-bp 153744755 --keep females_diseases_nervous_system.csv --freq --out ABCD1_females_diseases_nervous_system_freq.txt" --instance-type mem1_ssd1_v2_x4 --name ABCD1_xx_freq
+    ```

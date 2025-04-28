@@ -9,3 +9,6 @@ wes_analyses/get_block_per_chr.md
 wes_analyses/extract_pos_per_block.sh
 wes_analyses/run_extract_block_ranges.sh
 wes_analyses/data/*sorted.txt
+gwas_analyses/*
+wes_analyses/data/females_diseases_nervous_system.csv
+wes_analyses/data/males_diseases_nervous_system.csv
