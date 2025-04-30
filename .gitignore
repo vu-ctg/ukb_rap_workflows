@@ -5,7 +5,11 @@ wes_analyses/subset_vcfs/*
 wes_analyses/subset_vcfs/
 wes_analyses/subset_vcfs/
 README_tmp.md
-gwas_analyses/*
+gwas_analyses/backup/*
+gwas_analyses/to_delete/*
+gwas_analyses/unused_scripts/*
+gwas_analyses/unused_scripts/*
+gwas_analyses/benchmark/*
 wes_analyses/data/females_diseases_nervous_system.csv
 wes_analyses/data/males_diseases_nervous_system.csv
 wes_analyses/1_get_block_per_chr.md
