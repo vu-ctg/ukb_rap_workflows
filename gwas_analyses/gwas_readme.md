@@ -2,7 +2,7 @@ Author: Tanya Phung (t.n.phung@vu.nl)
 
 This document is intended to guide how to do a GWAS on the UKB-RAP platform. For demonstration purpose, the trait I will be using is gestational diabetes (field ID 4041)
 
-## Tables of content
+## Table of contents
 1. [General information](#info)
 2. [Schematics of steps to run GWAS](#schema)
 3. [Step 1: Prepare phenotype file](#step1)
