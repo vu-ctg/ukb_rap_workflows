@@ -19,3 +19,9 @@ wes_analyses/4_sort.sh
 wes_analyses/5_run_extract_block_ranges.sh
 wes_analyses/data/archived
 wes_analyses/results/*
+gwas_analyses/a_plink_convert_bgen_pgen_private.sh
+gwas_analyses/b_plink_qc_imputed_private.sh
+gwas_analyses/c_gwas_plink_bt_private.sh
+gwas_analyses/notes.md
+gwas_analyses/gestational_diabetes*
+gwas_analyses/all_fields.txt
