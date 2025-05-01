@@ -3,8 +3,13 @@ Author: Tanya Phung (t.n.phung@vu.nl)
 This document is intended to guide how to do a GWAS on the UKB-RAP platform. For demonstration purpose, the trait I will be using is gestational diabetes (field ID 4041)
 
 ## Tables of content
+1. [General information](#info)
+2. [Schematics of steps to run GWAS](#schema)
+3. [Step 1: Prepare phenotype file](#step1)
+3. [Step 2: Prepare the genotype](#step2)
+3. [Step 3: Run GWAS](#step3)
 
-## General information
+## General information <a name="info"></a>
 - Genotype calls path on UKB-RAP: `/Bulk/Genotype Results/Genotype calls/`
 - Field: 22418 (https://biobank.ndph.ox.ac.uk/showcase/field.cgi?id=22418)
 - Types of files available: `.bed`, `.bim`, `.bam` per chromosome
@@ -16,10 +21,10 @@ This document is intended to guide how to do a GWAS on the UKB-RAP platform. For
         - For `21      rs116894217     0       14779793        G       A` : https://gnomad.broadinstitute.org/variant/21-14779793-G-A?dataset=gnomad_r2_1
         - For `12      rs7959779       0       149478  G       A` : https://gnomad.broadinstitute.org/variant/12-149478-G-A?dataset=gnomad_r2_1
 
-## Schematics of steps to run GWAS
+## Schematics of steps to run GWAS <a name="schema"></a>
 ![alt text](ukb_rap_gwas_schema.png)
 
-## Step 1: Prepare phenotype file
+## Step 1: Prepare phenotype file <a name="step1"></a>
 #### Step 1a: Prepare the input file to the `dx extract_dataset` command
 
 - Script: `gwas_analyses_main.py`
@@ -84,7 +89,7 @@ table(i0$GestationalDiabetes)
 8473 1070 
 ```
 
-## Step 2: Prepare the genotype
+## Step 2: Prepare the genotype <a name="step2"></a>
 #### Step 2a: Convert bgen to pgen format
 - Run: `./a_plink_convert_bgen_pgen.sh`
 - Stats:
@@ -126,7 +131,7 @@ chrom | instance type | duration | cost
 --- | --- | --- | --- 
 22 | mem1_ssd1_v2_x2 | 21m | £0.0066
 
-## Step 3: Run GWAS
+## Step 3: Run GWAS <a name="step3"></a>
 - Run: `./c_gwas_plink_bt.sh`
 - Stats: 
 
