@@ -12,7 +12,7 @@ run_plink_cmd="plink2 --bfile ukb22828_c${chr}_b0_v3_filtered_2 \
        --glm firth-fallback \
        --pheno ${pheno}.pheno \
        --covar ${covar} \
-       --memory 28000000 --threads 16 --covar-variance-standardize --out c${i}_${pheno}"
+       --memory 28000000 --threads 16 --covar-variance-standardize --out c${chr}_${pheno}"
 
 
 dx run app-swiss-army-knife \
