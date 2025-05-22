@@ -99,22 +99,22 @@ table(i0$GestationalDiabetes)
 
 chrom | instance type | duration | cost
 --- | --- | --- | --- 
-1 | | | 
-2 | | | 
-3 | | | 
-4 | | | 
-5 | | | 
-6 | | | 
-7 | | | 
-8 | | | 
-9 | | | 
-10 | | | 
-11 | | | 
-12 | | | 
-13 | | | 
-14 | | | 
+1 | mem1_ssd2_v2_x8 | 2h 9m | £0.3253
+2 | mem1_ssd2_v2_x8 | 2h 14m | £0.3377
+3 | mem1_ssd2_v2_x8 | 1h 52m | £0.2816
+4 | mem1_ssd2_v2_x8 | 1h 52m | £0.2823
+5 | mem1_ssd2_v2_x8 | 1h 42m | £0.2564
+6 | mem1_ssd2_v2_x8 | 1h 40m | £0.2524
+7 | mem1_ssd2_v2_x8 | 1h 33m | £0.2353
+8 | mem1_ssd2_v2_x8 | 1h 28m | £0.2218
+9 | mem1_ssd2_v2_x8 | 1h 11m | £0.1788
+10 | mem1_ssd2_v2_x8 | 1h 20m | £0.2008
+11 | mem1_ssd2_v2_x8 | 1h 18m | £0.1962
+12 | mem1_ssd2_v2_x8 | 1h 19m | £0.2002
+13 | mem1_ssd2_v2_x8 | 58m | £0.1454
+14 | mem1_ssd2_v2_x8 | 54m | £0.1355
 15 | mem1_ssd1_v2_x8 | 49m | £0.1803
-16 | | | 
+16 | mem1_ssd2_v2_x8 | 54m | £0.1357
 17 | mem1_ssd1_v2_x8 | 47m | £0.1750
 18 | mem1_ssd1_v2_x8 | 45m | £0.1671
 19 | mem1_ssd1_v2_x8 | 40m | £0.1468
