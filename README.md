@@ -1,5 +1,5 @@
 # ukb_rap_workflows
-This repository contains documentation for CTG lab members on how to run analyses on UKB_RAP. 
+This repository contains documentation for VU-CTG lab members on how to run analyses on the UK Biobank Research Analysis Platform (UKB-RAP). The scripts contained here are meant to follow pipelines developed within the VU-CTG lab and may not be suitable for other applications. For more  information about the platform, please consult the [`UKB-RAP website`](https://ukbiobank.dnanexus.com/landing), its documentation [`site`](https://dnanexus.gitbook.io/uk-biobank-rap), or the UKB online [`community help pages`](https://community.ukbiobank.ac.uk/hc/en-gb).
 
 1. General overview and resources for getting started on the RAP system: [`UKB_RAP_overview.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/UKB_RAP_overview.md)
 2. How to: **extract phenotype data using dx**: https://github.com/vu-ctg/ukb_rap_workflows/blob/master/common_tasks/export_phenotypes.md
@@ -10,6 +10,6 @@ This repository contains documentation for CTG lab members on how to run analyse
 7. How to: **Run GWAS in plink using (local) CTG pipeline settings**: [`gwas_analyses/gwas_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/gwas_analyses/gwas_readme.md)
 8. How to **work with data and files interactively**: [`interactive_workspaces.md`](https://github.com/vu-ctg/ukb_rap_workflows/raw/refs/heads/master/interactive_workspaces.md)
 
-Coming soon: how to run MAGMA gene-based analyses and polygenic scores.
+Coming soon: how to run MAGMA gene-based analyses and polygenic score analyses.
 
 Developing a new analysis not already documented here? Have a helpful RAP tip to share? Feel free to add to this repository or contact @jesavage to be added as a contributor.
