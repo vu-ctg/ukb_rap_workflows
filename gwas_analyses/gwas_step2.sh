@@ -28,7 +28,7 @@ dx run app-swiss-army-knife \
 -iin=${projectid}:${path}/ukb22828_c${chr}_b0_v3_filtered.psam \
 -iin=${projectid}:${path}/ukb22828_c${chr}_b0_v3_filtered.pvar \
 -iin=${projectid}:${path}/${pheno}.pheno \
--iin=${ctgprojectid}:${path}/${covar} \
+-iin=${projectid}:${path}/${covar} \
 -icmd="${run_plink_cmd}" \
 --instance-type mem1_ssd1_v2_x16 \
 --name chr${chr}_gwas_plink \
