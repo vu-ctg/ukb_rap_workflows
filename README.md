@@ -8,7 +8,7 @@ This repository contains documentation for VU-CTG lab members on how to run anal
 5. How to: **run PHESANT**: [`run_phesant/run_phesant_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/run_phesant/run_phesant_readme.md)
 6. How to: **subset pVCF files for a region/gene of interest**: [`wes_analyses/wes_analyses_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/wes_analyses/wes_analyses_readme.md)
 7. How to: **Run GWAS in plink using (local) CTG pipeline settings**: [`gwas_analyses/gwas_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/gwas_analyses/gwas_readme.md)
-8. How to **work with data and files interactively**: [`interactive_workspaces.md`](https://github.com/vu-ctg/ukb_rap_workflows/raw/refs/heads/master/interactive_workspaces.md)
+8. How to **work with data and files interactively**: [`interactive_workspaces.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/interactive_workspaces.md)
 
 Coming soon: how to run MAGMA gene-based analyses and polygenic score analyses.
 
