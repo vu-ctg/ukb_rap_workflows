@@ -22,7 +22,7 @@ dx run app-swiss-army-knife \
 -iin=${ctgprojectid}:/Bulk/Imputation/UKB\ imputation\ from\ genotype/ukb22828_c${chr}_b0_v3.bgen \
 -iin=${ctgprojectid}:/Bulk/Imputation/UKB\ imputation\ from\ genotype/ukb22828_c${chr}_b0_v3.sample \
 -iin=${ctgprojectid}:/Subject\ Lists/unrel_${ancestry}.ids \
--iin=${projectid}:/Variant\ Lists/snplist_QCinclude_rsid.txt \
+-iin=${ctgprojectid}:/Variant\ Lists/snplist_QCinclude_rsid.txt \
 -icmd="${run_plink_cmd}" \
 --instance-type mem2_ssd1_v2_x8 \
 --name chr${chr}_bgen_pgen \
