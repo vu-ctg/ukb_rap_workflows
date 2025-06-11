@@ -50,7 +50,7 @@ dx run app-swiss-army-knife \
 -iin=${ctgprojectid}:/Bulk/Imputation/UKB\ imputation\ from\ genotype/ukb22828_c${chr}_b0_v3.bgen \
 -iin=${ctgprojectid}:/Bulk/Imputation/UKB\ imputation\ from\ genotype/ukb22828_c${chr}_b0_v3.sample \
 -iin=${ctgprojectid}:/Subject\ Lists/unrel_${ancestry}.ids \
--iin=${projectid}:/Variant\ Lists/snplist_QCinclude_rsid.txt \
+-iin=${ctgprojectid}:/Variant\ Lists/snplist_QCinclude_rsid.txt \
 -iin=${projectid}:${path}/${pheno}.pheno \
 -iin=${ctgprojectid}:${path}/${covar} \
 -icmd="${run_plink_cmd}" \
