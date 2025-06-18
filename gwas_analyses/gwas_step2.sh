@@ -2,7 +2,7 @@
 # run a gwas using plink
 
 projectid= #put in user's projectID
-ctgprojectid=project-GgbZPkjJ2JG1kB92GKyB7Zb5 #assumems membership in CTG shared project
+ctgprojectid=project-GgbZPkjJ2JG1kB92GKyB7Zb5 #assumes membership in CTG shared project
 path= #put in the path in user's project to store output files
 ancestry="EUR" #specify ancesty group for analysis, one of AFR,AMR,EAS,EUR,SAS
 pheno= #put in the basename of the {phenotype}.pheno, example: gestational_diabetes. This assume that there is a file gestational_diabetes.pheno
