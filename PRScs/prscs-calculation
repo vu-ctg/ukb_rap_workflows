@@ -1,0 +1,80 @@
+## ON SNELLIUS ##
+# ----------------------------------------------------
+# For setup PRScs 
+# ----------------------------------------------------
+
+# On Snellius
+cd ~/
+git clone https://github.com/getian107/PRScs.git
+# Download LD reference files locally on Snellius
+cd PRScs
+wget https://www.dropbox.com/s/t9opx2ty6ucrpib/ldblk_ukbb_eur.tar.gz
+tar -zxvf ldblk_ukbb_eur.tar.gz
+
+
+# ----------------------------------------------------
+# Setup and format PRScs sumstat files
+# Check if your PRScs sumstat file contains correct
+# header for PRS weight calculation
+# ----------------------------------------------------
+
+cat [GWAS sumstat file].txt | awk '{print $2"\t"$6"\t"$4"\t"$11"\t"$16}' > [name PRScs sumstat file].txt
+
+head [PRScs sumstat file].txt
+tail [PRScs sumstat file].txt
+wc -l [PRScs sumstat file].txt
+
+sed -i '1d' [PRScs sumstat file].txt
+sed -i '1i SNP\tA1\tA2\tOR\tP' [PRScs sumstat file].txt
+
+
+# -------------------------------------------------------------
+# Calculation of SNP weights using PRScs python script
+# 
+# Calculate effective sample size using formula 
+# n_eff = 4 / ( (1 / N_case) + (1 / N_control))
+#
+# Replace n_gwas argument with this n_eff calculated
+# Replace all file paths as needed
+# Run below commands as a batch script using sbatch on Snellius
+# --------------------------------------------------------------
+
+
+####
+!/bin/bash
+SBATCH -t 10:00:00
+
+CSDIR=[path to PRScs directory]
+module load 2022
+module load Python/2.7.18-GCCcore-11.3.0-bare
+
+python ${CSDIR}/PRScs.py --ref_dir=${CSDIR}/ldblk_ukbb_eur --bim_prefix=[path to file with ukbids_rsids] --sst_file=[path to file with PRScs sumstats] --n_gwas=[n_eff calculated] --out_dir=[directory name for output]
+####
+
+# ----------------------------------------------------
+# Output files are calculated per chromosome
+# Concatenate PRScs SNPs effect weights 
+# ----------------------------------------------------
+
+cat pst_eff_a1_b0.5_phiauto_chr* > [file name]_weights.txt
+
+## ON UKB-RAP ##
+# ----------------------------------------------------
+# Create PRScs in UKB-RAP commandline
+# Use PLINK to create scores based on the calculated SNP weights
+# !IMPORTANT! double-check instance type and priority
+# If run fails due to storage increase instance type
+# ----------------------------------------------------
+
+for i in {1..22}; do
+dx run swiss-army-knife \
+	-iin="[path to file name]_weights.txt"\
+	-iin="project-GgbZPkjJ2JG1kB92GKyB7Zb5:/benchmark/plink_gwas/ukb22828_c${i}_b0_v3_filtered_2.bim"\
+	-iin="project-GgbZPkjJ2JG1kB92GKyB7Zb5:/benchmark/plink_gwas/ukb22828_c${i}_b0_v3_filtered_2.bed"\
+	-iin="project-GgbZPkjJ2JG1kB92GKyB7Zb5:/benchmark/plink_gwas/ukb22828_c${i}_b0_v3_filtered_2.fam"\
+	-icmd="plink2 --bfile ukb22828_c${i}_b0_v3_filtered_2 --score [file name]_weights.txt 2 4 6 --out [name]chr${i}"\
+	--instance-type="mem1_ssd1_v2_x2" \ 
+	--name="[name of run]chr${i}" \ 
+	--priority low -y \
+	--destination="[filepath to directory]"
+done
