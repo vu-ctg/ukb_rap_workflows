@@ -12,6 +12,7 @@ Before working with the RAP, make sure you have completed your [`Researcher Trai
 7. How to: **Run GWAS in plink using (local) CTG pipeline settings**: [`gwas_analyses/gwas_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/gwas_analyses/gwas_readme.md)
 8. How to **work with data and files interactively**: [`interactive_workspaces.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/interactive_workspaces.md)
 9. How to **create polygenic scores in UKB using PRScs**: [`prscs-calculation.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/PRScs/prscs-calculation.md)
+10. How to **create an applet**: [`applet_example_readme.md`] (https://github.com/vu-ctg/ukb_rap_workflows/blob/master/codes/applet_example/applet_example_readme.md)
 
 Coming soon: how to run MAGMA gene-based analyses.
 

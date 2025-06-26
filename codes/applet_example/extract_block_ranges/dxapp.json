@@ -1,0 +1,70 @@
+{
+  "name": "extract_block_ranges",
+  "title": "extract_block_ranges",
+  "summary": "extract_block_ranges",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "block_pos",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "out_ranges",
+      "class": "file",
+      "optional": false,
+      "patterns": [
+        "*"
+      ],
+      "help": ""
+    },
+    {
+      "name": "block_id",
+      "class": "string",
+      "optional": false,
+      "help": ""
+    },
+    {
+      "name": "out_filename",
+      "class": "string",
+      "optional": false,
+      "help": ""
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "outfile",
+      "class": "file",
+      "help": ""
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "interpreter": "python3",
+    "file": "src/extract_block_ranges.py",
+    "distribution": "Ubuntu",
+    "release": "20.04",
+    "version": "0"
+  },
+  "access": {
+    "project": "CONTRIBUTE"
+  },
+  "regionalOptions": {
+    "aws:eu-west-2": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x2"
+        }
+      }
+    }
+  }
+}
