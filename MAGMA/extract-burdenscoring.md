@@ -25,7 +25,7 @@ for i in {1..22}; do
 done
 ```
 Second, execute burden scoring for each gene of choice. You need your extraction files, your scoring files for each gene (best to store in .tar files per chromosome), and a file with list of genes by chromosome.
-Output is your .sscore files per gene including all burden scores that you can concatinate. Be aware with large gene list and thus lots of SNPs this can take a long time to run.
+Output is your .sscore files per gene including all burden scores that you can concatenate. Be aware with large gene list and thus lots of SNPs this can take a long time to run.
 
 ```
 for i in {1..22}; do
