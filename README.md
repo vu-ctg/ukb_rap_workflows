@@ -13,7 +13,6 @@ Before working with the RAP, make sure you have completed your [`Researcher Trai
 8. How to **work with data and files interactively**: [`interactive_workspaces.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/interactive_workspaces.md)
 9. How to **create polygenic scores in UKB using PRScs**: [`prscs-calculation.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/PRScs/prscs-calculation.md)
 10. How to **create an applet**: [`applet_example_readme.md`] (https://github.com/vu-ctg/ukb_rap_workflows/blob/master/codes/applet_example/applet_example_readme.md)
-
-Coming soon: how to run MAGMA gene-based analyses.
+11. How to run [`MAGMA gene-based analyses`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/MAGMA/run-MAGMA.md) and create [`gene burden scores`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/MAGMA/extract-burdenscoring.md).
 
 Developing a new analysis not already documented here? Have a helpful RAP tip to share? Feel free to add to this repository or contact @jesavage to be added as a contributor.
