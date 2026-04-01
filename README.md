@@ -4,7 +4,7 @@ This repository contains documentation for VU-CTG lab members on how to run anal
 Before working with the RAP, make sure you have completed your [`Researcher Training Courses`](https://community.ukbiobank.ac.uk/hc/en-gb/articles/22145292393757-Researcher-Training-Courses) - mandatory for accessing the system. It is also a good idea to review the [`series of webinar tutorials`](https://www.youtube.com/watch?v=762PVlyZJ-U&list=PLRkZ0Fz-n3Z7Jg0Vz4vudLYnBza4EUGLM) to get familiar with the platform. 
 
 1. General overview and resources for getting started on the RAP system: [`UKB_RAP_overview.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/UKB_RAP_overview.md)
-2. How to: **extract phenotype data using dx**: [`common_tasks/export_phenotypes.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/common_tasks/export_phenotypes.md)
+2. How to: **extract phenotype data and create datasets for analysis**: [`common_tasks/export_phenotypes.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/common_tasks/export_phenotypes.md)
 3. How to: **web scrape UKB Showcase**: [`codes/ukb_showcase_webscrape/ukb_showcase_webscrape.py`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/codes/ukb_showcase_webscrape/ukb_showcase_webscrape.py)
 4. How to: **create the file to use as input for `dx extract_dataset`**: [`codes/export_phenotypes/subset_all_fields.py`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/codes/export_phenotypes/subset_all_fields.py)
 5. How to: **run PHESANT**: [`run_phesant/run_phesant_readme.md`](https://github.com/vu-ctg/ukb_rap_workflows/blob/master/run_phesant/run_phesant_readme.md)
