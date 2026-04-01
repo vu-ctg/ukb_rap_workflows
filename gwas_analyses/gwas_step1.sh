@@ -4,7 +4,7 @@
 
 projectid= #put in projectID
 ctgprojectid=project-GgbZPkjJ2JG1kB92GKyB7Zb5 #assumems membership in CTG shared project
-path= #put in the path in user's project to store output files
+path= #put in the path in user's project to store output files (excluding the leading "/" )
 ancestry="EUR" #specify ancesty group for analysis, one of AFR,AMR,EAS,EUR,SAS
 
 for chr in {1..22}
@@ -26,8 +26,9 @@ dx run app-swiss-army-knife \
 -icmd="${run_plink_cmd}" \
 --instance-type mem2_ssd2_v2_x8 \
 --name chr${chr}_bgen_pgen \
---destination ${projectid}:${path} \
+--destination ${projectid}:/${path} \
 --priority normal \
 --cost-limit 1 \
 --y 
+
 done
