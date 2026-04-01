@@ -24,9 +24,10 @@ dx run app-swiss-army-knife \
 -iin=${ctgprojectid}:/Subject\ Lists/unrel_${ancestry}.ids \
 -iin=${ctgprojectid}:/Variant\ Lists/snplist_QCinclude_rsid.txt \
 -icmd="${run_plink_cmd}" \
---instance-type mem2_ssd1_v2_x8 \
+--instance-type mem2_ssd2_v2_x8 \
 --name chr${chr}_bgen_pgen \
 --destination ${projectid}:${path} \
 --priority normal \
+--cost-limit 1 \
 --y 
 done
