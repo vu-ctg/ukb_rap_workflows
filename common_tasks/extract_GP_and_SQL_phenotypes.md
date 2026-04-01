@@ -7,7 +7,7 @@ To extract these phenotypes, start up a spark cluster on the RAP either via dx r
 After the environment initializes, adapt the example Python code below to extract the desired data from the desired database.
 
 
-<i>N.B. All data fields can be accessed using SQL commands in this way, but most are easier to access using dx extract_dataset or Table Exporter.</i>
+<i>N.B. All data fields can be accessed using SQL commands in this way, but small sets are easier to access using the Table Exporter.</i>
 
 ```
 #setup
