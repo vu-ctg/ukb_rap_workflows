@@ -18,7 +18,7 @@ run_plink_cmd="plink2 --pfile ukb22828_c${chr}_b0_v3_filtered \
       --glm firth-fallback no-x-sex hide-covar \
       --pheno ${pheno}.pheno \
       --covar ${covar} \
-      --covar-name sex,age,array01,pop_pc1-pop_pc20 \
+      --covar-name sex,f.21022.0.0,array01,pop_pc1-pop_pc20 \
       --covar-variance-standardize \
       --memory 64000 \
       --out c${chr}_${pheno}_${ancestry}"
