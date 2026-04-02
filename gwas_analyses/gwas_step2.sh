@@ -2,8 +2,9 @@
 # run a gwas using plink
 
 projectid= #put in user's projectID
+outputdir= #put in the directory in user's project to store output files (excluding the leading "/" )
 ctgprojectid=project-GgbZPkjJ2JG1kB92GKyB7Zb5 #assumes membership in CTG shared project
-path= #put in the path in user's project to store output files (excluding the leading "/" )
+genofilepath=project-GgbZPkjJ2JG1kB92GKyB7Zb5:/imputed_genos_cleaned #put in full path to QC'd genotype files from step 1
 ancestry="EUR" #specify ancesty group for analysis, one of AFR,AMR,EAS,EUR,SAS
 pheno= #put in the basename of the {phenotype}.pheno input file, e.g.: "pheno=gestational_diabetes" 
       ## where a file "gestational_diabetes.pheno" exists in the users's project directory
@@ -24,9 +25,9 @@ run_plink_cmd="plink2 --pfile ukb22828_c${chr}_b0_v3_filtered \
       --out c${chr}_${pheno}_${ancestry}"
 
 dx run app-swiss-army-knife \
--iin=${projectid}:/${path}/ukb22828_c${chr}_b0_v3_filtered.pgen \
--iin=${projectid}:/${path}/ukb22828_c${chr}_b0_v3_filtered.psam \
--iin=${projectid}:/${path}/ukb22828_c${chr}_b0_v3_filtered.pvar \
+-iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.pgen \
+-iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.psam \
+-iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.pvar \
 -iin=${projectid}:/${path}/${pheno}.pheno \
 -iin=${ctgprojectid}:/${covar} \
 -icmd="${run_plink_cmd}" \
