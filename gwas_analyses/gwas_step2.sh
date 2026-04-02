@@ -28,12 +28,12 @@ dx run app-swiss-army-knife \
 -iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.pgen \
 -iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.psam \
 -iin=${genofilepath}/ukb22828_c${chr}_b0_v3_filtered.pvar \
--iin=${projectid}:/${path}/${pheno}.pheno \
+-iin=${projectid}:/${outputdir}/${pheno}.pheno \
 -iin=${ctgprojectid}:/${covar} \
 -icmd="${run_plink_cmd}" \
 --instance-type mem1_ssd1_v2_x16 \
 --name chr${chr}_gwas_plink \
---destination ${projectid}:/${path} \
+--destination ${projectid}:/${outputdir} \
 --priority low \
 --cost-limit 0.5 \
 --y
