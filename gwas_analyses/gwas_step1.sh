@@ -7,12 +7,13 @@ ctgprojectid=project-GgbZPkjJ2JG1kB92GKyB7Zb5 #assumems membership in CTG shared
 path= #put in the path in user's project to store output files (excluding the leading "/" )
 ancestry="EUR" #specify ancesty group for analysis, one of AFR,AMR,EAS,EUR,SAS
 
-for chr in {1..22}
+for chr in {1..22} X XY
 do
 
 run_plink_cmd="plink2 --bgen ukb22828_c${chr}_b0_v3.bgen ref-first \
         --sample ukb22828_c${chr}_b0_v3.sample \
         --make-pgen \
+        --freq \
         --keep unrel_${ancestry}.ids \
         --extract snplist_QCinclude_rsid.txt \
         --hard-call-threshold 0.1 \
