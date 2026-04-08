@@ -13,7 +13,6 @@ do
 run_plink_cmd="plink2 --bgen ukb22828_c${chr}_b0_v3.bgen ref-first \
         --sample ukb22828_c${chr}_b0_v3.sample \
         --make-pgen \
-        --freq \
         --keep unrel_${ancestry}.ids \
         --extract snplist_QCinclude_rsid.txt \
         --hard-call-threshold 0.1 \
