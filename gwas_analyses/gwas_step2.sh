@@ -10,12 +10,13 @@ pheno= #put in the basename of the {phenotype}.pheno input file, e.g.: "pheno=ge
       ## where a file "gestational_diabetes.pheno" exists in the users's project directory
 covar="gwa_covs.txt" #put in the path to the covariate file; default is CTG shared file 
 
-for chr in {1..22} 
+for chr in {1..22} X XY
 do
 
 run_plink_cmd="plink2 --pfile ukb22828_c${chr}_b0_v3_filtered \
       --maf 0.0001 \
       --geno 0.05 \
+      --freq \
       --glm firth-fallback no-x-sex hide-covar \
       --pheno ${pheno}.pheno \
       --covar ${covar} \
