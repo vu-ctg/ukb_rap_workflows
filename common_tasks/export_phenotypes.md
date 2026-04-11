@@ -43,4 +43,20 @@ dx extract_dataset {projectID}:{recordID} --list-entities > all_entities.txt
 
 - NOTES: 
     + If there are a lot of fields to extract, the Cohort Browser/Table Exporter can be quite slow or fail because it overwhelms the server (see: https://community.dnanexus.com/s/question/0D582000004TONTCA4/are-there-simpler-ways-of-doing-things). Using spark or direct SQL commands to extract large sets of phenotypes is more efficient. See the above resources for more info on different ways to extract large and small datasets.
-    + dx extract_dataset should only be used for examinining meta-data, otherwise it will extract individual-level data to the user's local machine instead of the user's RAP project (not allowed!)
+    + dx extract_dataset should only be used for examinining meta-data OR used within the RAP JupyterLab environment, otherwise it will extract individual-level data to the user's local machine instead of the user's RAP project (not allowed!)
+ 
+
+To use dx extract_dataset within the RAP, first login to the RAP website and launch a new JupyterLab job (Tools >> JupyterLab) from the appropriate project and with the necessary computing resources. Then open up a new terminal window and use the dx command line tools. For example:
+
+- Extract phenotypic data for all participants for the data field 100001 (4 instances). See the data dictionaries above for the naming structure.
+
+```
+dx extract_dataset {projectID}:{recordID} --fields "participant.eid,participant.p100001_i0,participant.p100001_i1,participant.p100001_i2,participant.p100001_i3,participant.p100001_i4 --output phenos.txt"
+
+# Optionally open an R/python window within JupyterLab to make additional modifications to the extracted phenotype file
+
+dx upload phenos.txt
+```
+- Don't forget to re-upload the extracted phenotype file to your project using dx upload (or else your work will be lost when the job ends).
+  
+- Instead of giving a list of fields as inputs to `--fields`, a list of fields can also be given as a file using the option `----fields-file`.
