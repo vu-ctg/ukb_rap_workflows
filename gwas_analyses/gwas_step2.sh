@@ -16,7 +16,6 @@ do
 run_plink_cmd="plink2 --pfile ukb22828_c${chr}_b0_v3_filtered \
       --maf 0.0001 \
       --geno 0.05 \
-      --freq \
       --glm firth-fallback no-x-sex hide-covar \
       --pheno ${pheno}.pheno \
       --covar ${covar} \
@@ -36,7 +35,7 @@ dx run app-swiss-army-knife \
 --name chr${chr}_gwas_plink \
 --destination ${projectid}:/${outputdir} \
 --priority low \
---cost-limit 0.5 \
+--cost-limit 1 \
 --y
 
 done
