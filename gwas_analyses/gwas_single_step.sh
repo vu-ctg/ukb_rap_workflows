@@ -30,7 +30,6 @@ echo 'Run analysis for chr ${i}';
 plink2 --pfile ukb22828_c${i}_b0_v3_filtered \
 --maf 0.0001 \
 --geno 0.05 \
---freq \
 --glm firth-fallback no-x-sex hide-covar \
 --covar ${covar} \
 --covar-name sex,f.21022.0.0,array01,pop_pc1-pop_pc20 \
