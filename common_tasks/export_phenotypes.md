@@ -59,4 +59,4 @@ dx upload phenos.txt
 ```
 - Don't forget to re-upload the extracted phenotype file to your project using dx upload (or else your work will be lost when the job ends).
   
-- Instead of giving a list of fields as inputs to `--fields`, a list of fields can also be given as a file using the option `----fields-file`.
+- Instead of giving a list of fields as inputs to `--fields`, a list of fields can also be given as a file using the option `--fields-file`.
