@@ -50,20 +50,30 @@ done
 
 
 #  Reduce the columns to the essentials needed for downstream analyses and rename the columns for compatibility with other software 
-### (output columns: SNP, CHR, BP, A1 [effect allele], A2, EAF, N, BETA/OR, SE, P) - adjust as needed.
+### (output columns: SNP, CHR, BP, A1 [effect allele], A2, EAF, N, BETA/OR, SE, P, [Ncase, Ncontrol, Neff]) - adjust as needed.
 ### double check that the desired columns are correctly selected here, especially if you used different analysis settings!
+
+# Linear regression results
 if [[ "${extension}" == "linear" ]]; then
     awk '{print $3"\t"$1"\t"$2"\t"$7"\t"$8"\t"$9"\t"$11"\t"$12"\t"$13"\t"$15 }' ${mergedfile}.temp > ${mergedfile}
     sed -i "1d" ${mergedfile}
     sed -i "1i SNP\tCHR\tBP\tA1\tA2\tEAF\tN\tBETA\tSE\tP" ${mergedfile}
 fi
 
+# Logistic/hybrid regression results - use this option if --glm cols=+totallelecc option was applied
+## (i.e. results file has case/control allele counts for calculating Ncase/Ncontrol/Neff (effective sample size))
 if [[ "${extension}" == "logistic" ]] || [[ "${extension}" == "hybrid" ]]; then
-    awk '{print $3"\t"$1"\t"$2"\t"$7"\t"$8"\t"$9"\t"$12"\t"$13"\t"$14"\t"$16 }' ${mergedfile}.temp > ${mergedfile}
+    awk '{print $3"\t"$1"\t"$2"\t"$7"\t"$8"\t"$11"\t"$15"\t"$16"\t"$18"\t"($9/2)"\t"($10/2)"\t"4/((1/($9/2))+(1/($10/2))) }' ${mergedfile}.temp > ${mergedfile}
     sed -i "1d" ${mergedfile}
-    sed -i "1i SNP\tCHR\tBP\tA1\tA2\tEAF\tN\tOR\tSE\tP" ${mergedfile}
+    sed -i "1i SNP\tCHR\tBP\tA1\tA2\tEAF\tOR\tSE\tP\tNcase\tNcontrol\tNeff" ${mergedfile}
 fi
 
+# Logistic/hybrid regression - use this option if no case/control allele counts were included in results file
+#if [[ "${extension}" == "logistic" ]] || [[ "${extension}" == "hybrid" ]]; then
+#    awk '{print $3"\t"$1"\t"$2"\t"$7"\t"$8"\t"$9"\t"$12"\t"$13"\t"$14"\t"$16 }' ${mergedfile}.temp > ${mergedfile}
+#    sed -i "1d" ${mergedfile}
+#    sed -i "1i SNP\tCHR\tBP\tA1\tA2\tEAF\tN\tOR\tSE\tP" ${mergedfile}
+#fi
 
 
 # Re-upload files to user's directory
