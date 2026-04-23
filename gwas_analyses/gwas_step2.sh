@@ -13,6 +13,9 @@ covar="gwa_covs.txt" #put in the path to the covariate file; default is CTG shar
 for chr in {1..22} X XY
 do
 
+# PLINK command to run: adjust this as needed for your specific analysis
+## for example, for case/control phenotypes, it's wise to include "cols=+totallelecc" 
+## in the glm flag to add case/control (allele) counts to the results file
 run_plink_cmd="plink2 --pfile ukb22828_c${chr}_b0_v3_filtered \
       --maf 0.0001 \
       --geno 0.05 \
